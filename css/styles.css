@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Sour Gummy', monospace;
+    font-size: 16px;
+    background-color: #f2e9ce;
+    color: #1f1c1e;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "navbar"
+        "main"
+        "footer"
+    ;
+}
+
+/* navbar styles */
+.page__navbar{
+    grid-area: navbar;
+    background-color: #1f1c1e;
+    display: flex;
+    gap: 8px;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+
+nav li{
+    height: 50px;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #f2e9ce;
+}
+
+nav a:hover,
+.activeLink{
+    background-color: #f21fac;
+}
+
+.page__main{
+    grid-area: main;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 16px;
+    padding: 3em;
+}
+.page__header {
+    display: flex;
+    flex-flow: column;
+    gap: 3em;
+    min-height: 40vh;
+    padding-top: 3em;
+    text-align: center;
+    align-items: center;
+}
+/* section styles */
+
+section {
+    position: relative;
+    min-height: 80vh;
+}
+
+.activeSection{
+    background-color: rgba(242, 31, 172, 0.2);
+}
+.section__container{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 8px;
+}
+
+section h2{
+    color: #f21fac;
+}
+/* colors:
+    bg: #f2e9ce
+    fg: #1f1c1e
+    accent: #f21fac
+
+*/
+
+#main-image{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page__footer{
+    background-color: #1f1c1e;
+    color: #f21fac;
+    text-align: center;
+    font-size: 24px;
+    grid-area: footer;
+}
