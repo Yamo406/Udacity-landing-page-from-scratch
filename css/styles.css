@@ -25,6 +25,7 @@ body{
     grid-area: navbar;
     background-color: #1f1c1e;
     display: flex;
+    flex-flow: wrap;
     gap: 8px;
     z-index: 999;
     position: sticky;
@@ -35,18 +36,19 @@ nav ul{
     width: 100%;
     list-style: none;
     display: flex;
+    flex-flow: wrap;
     justify-content: flex-end;
     align-items: center;
     text-align: center;
 }
 
 nav li{
-    height: 50px;
+    height: 3em;
 }
 
 nav a{
     height: 100%;
-    padding: 0 30px;
+    padding: 0 2em;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -123,11 +125,22 @@ main h1{
 
 /* responsive */
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 550px){
+    body{
+        grid-template-rows: 3% 1fr auto;
+    }
     .page__navbar{
-        gap: 4px;
+        position: relative;
     }
     nav ul{
-        flex-flow: column wrap;
+        /* flex-flow: wrap; */
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+    nav li{
+        padding: 0;
+    }
+    .page__main{
+        padding: 1em;
     }
 }

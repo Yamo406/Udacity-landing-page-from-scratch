@@ -55,6 +55,6 @@ navbarList.addEventListener('click', (event) => {
 
     targetSection.scrollIntoView({
         behavior: "smooth",
-        block: "center"
+        block:  "center"
     })
 })
