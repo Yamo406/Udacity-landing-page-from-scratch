@@ -56,6 +56,7 @@ nav a{
 nav a:hover,
 .activeLink{
     background-color: #f21fac;
+    color: #1f1c1e;
 }
 
 .page__main{
@@ -83,6 +84,8 @@ section {
 
 .activeSection{
     background-color: rgba(242, 31, 172, 0.2);
+    border-radius: 16px;
+    padding: 16px;
 }
 .section__container{
     display: flex;
@@ -90,7 +93,8 @@ section {
     gap: 8px;
 }
 
-section h2{
+section h2,
+main h1{
     color: #f21fac;
 }
 /* colors:
@@ -115,4 +119,15 @@ section h2{
     text-align: center;
     font-size: 24px;
     grid-area: footer;
+}
+
+/* responsive */
+
+@media screen and (max-width: 500px){
+    .page__navbar{
+        gap: 4px;
+    }
+    nav ul{
+        flex-flow: column wrap;
+    }
 }
