@@ -1,4 +1,13 @@
-I was lazy to make a new project from scratch, however since this laziness hindered me and the Udacity instructors have felt that my project is "plagiarized", not only that I raise a ticket and they don't respond for nearly a month, I will just make a new project from scratch to pass this project.
+# Udacity Landin page 2.1
 
-note to Udacity: "There is a lot that you need to work on, most importantly is your ticket responses"
+DOM manipulation project, where we build a dynamic navigation bar that populates out of the available sections.
 
+---
+
+## Technologies Used:
+
+* HTML5
+* CSS3
+* Javascript
+
+The sugary lorem ipsum can be found from [Cupcake Ipsum](https://cupcakeipsum.com)

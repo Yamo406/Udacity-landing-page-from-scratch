@@ -1,6 +1,6 @@
 // break down the navbar creation.
 
-const VALUE = 300;
+const VALUE = window.innerHeight / 2;
 
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
@@ -15,7 +15,7 @@ function createNavbar(){
         const navbarItemLink = document.createElement("a");
         let data = section.dataset.nav;
         navbarItemLink.innerText = data;
-        navbarItemLink.href = `#${section.id}`;
+        navbarItemLink.dataset.nav = `#${section.id}`;
         navbarItem.append(navbarItemLink);
         listFragment.append(navbarItem);
     }
@@ -27,14 +27,18 @@ function createNavbar(){
 function makeActive() {
     for (const section of sections) {
         const box = section.getBoundingClientRect();
-        //Find a value that works best, but 150 seems to be a good start.
+        const navLink = document.querySelector(`[data-nav="#${section.id}"]`);
         if (box.top <= VALUE && box.bottom >= VALUE) {
             //apply active state on current section and corresponding Nav link
             section.classList.add("activeSection");
 
+            navLink.classList.add("activeLink");
+
         } else {
             //Remove active state from other section and corresponding Nav link
             section.classList.remove("activeSection");
+
+            navLink.classList.remove("activeLink");
         }
     }
 }
@@ -50,8 +54,8 @@ document.addEventListener('scroll', makeActive);
 navbarList.addEventListener('click', (event) => {
     event.preventDefault();
 
-    let hrefValue = event.target.getAttribute('href');
-    let targetSection = document.querySelector(hrefValue);
+    let dataNav = event.target.dataset.nav;
+    let targetSection = document.querySelector(dataNav);
 
     targetSection.scrollIntoView({
         behavior: "smooth",
